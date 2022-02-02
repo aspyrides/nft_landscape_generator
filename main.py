@@ -1,9 +1,10 @@
 from PIL import Image
 import random
-import json
 import os
 import numpy as np
 
+# SET PARAMETERS
+TOTAL_IMAGES = 100 # Number of random unique images we want to generate
 input_dir = "./layers"
 output_dir = "./images"
 
@@ -71,8 +72,6 @@ middle_files = {
 
 
 ## Generate Traits
-TOTAL_IMAGES = 100 # Number of random unique images we want to generate
-
 all_images = []
 
 # A recursive function to generate unique image combinations
@@ -133,8 +132,7 @@ for image in all_images:
 
 
 
-# create image
-
+# create image and save
 if(not os.path.exists(f'{output_dir}')):
     os.mkdir(f'{output_dir}')
 
